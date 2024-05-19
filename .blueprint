@@ -1,0 +1,11 @@
+created:
+    - database/factories/BookFactory.php
+    - database/factories/ProspectFactory.php
+    - database/migrations/2024_05_19_015004_create_books_table.php
+    - database/migrations/2024_05_19_015005_create_prospects_table.php
+    - database/migrations/2024_05_19_015006_create_book_prospect_table.php
+    - app/Models/Book.php
+    - app/Models/Prospect.php
+models:
+    Book: { ASIN: 'string:10 index', ISBN13: 'string:13 nullable', title: 'string nullable', author: 'string nullable', manufacturer: 'string nullable', publication_date: 'datetime nullable', binding: 'string nullable', format: 'string nullable', relationships: { belongsToMany: Prospect } }
+    Prospect: { prospect_id: 'unsignedInteger index', name: string, description: 'text nullable', page_count: 'unsignedInteger nullable', trim_size_1: 'decimal:8,2 nullable', trim_size_2: 'decimal:8,2 nullable' }
